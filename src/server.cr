@@ -1,8 +1,6 @@
 require "http/server"
 
 server = HTTP::Server.new do |context|
-  context.response.content_type = "text/html"
-  
   serve(context.response, context.request.path)
 
   puts "#{context.request.method} request:"
@@ -13,25 +11,31 @@ server = HTTP::Server.new do |context|
   puts
 end
 
-def serve(io : IO, path)
+def serve(response : IO, path)
   prefix = "src"
-  index = "index.html"
-  not_found = "404.html"
+  index = "#{prefix}/index.html"
+  not_found = "#{prefix}/404.html"
+  filetypes = {"html" => "text/html", "css" => "text/css"}
+  filetype = ""
   
   case path
   when "/"
-    path = "#{prefix}/#{index}"
+    path = index
   else
     path = "#{prefix}#{path}"
   end
 
-  puts "seeking resource #{path}"
+  path = "#{prefix}/#{not_found}" unless File.exists? path
 
-  if File.exists? path
-    io.print File.read(path)
-  else
-    io.print File.read("#{prefix}/#{not_found}")
+  begin
+    filetype = filetypes[path.split('.')[-1]]
+  rescue exception
+    path = not_found
+    filetype = "text/html"
   end
+
+  response.content_type = filetype
+  response.print File.read(path)
 end
 
 puts "Running server on localhost:8080"
