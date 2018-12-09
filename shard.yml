@@ -1,0 +1,13 @@
+name: server
+version: 0.1.0
+
+authors:
+  - Seth Hinz <sethhinz@me.com>
+
+targets:
+  server:
+    main: src/server.cr
+
+crystal: 0.26.1
+
+license: MIT
