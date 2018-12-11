@@ -8,3 +8,5 @@ crystal run src/server.cr
 ```
 
 Then, pop open a browser and skedaddle over to http://localhost:8080
+
+Oh, and you'll need crystal, of course.
