@@ -1,3 +1,114 @@
-textarea {
-    background-color: blue;
+@import url('https://fonts.googleapis.com/css?family=Quicksand|Raleway');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Raleway"
+}
+
+::selection {
+    background: #936EAD; /* WebKit/Blink Browsers */
+    color: white;
+}
+
+::-moz-selection {
+    background: #936EAD; /* Gecko Browsers */
+    color: white;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #eeeeee;
+}
+
+section#header {
+    margin-bottom: 20px;
+    width: 100%;
+    height: 60px;
+    background-color: #633D8E;
+
+    box-shadow: #aaa 0px 0px 10px;
+    color: #fff;
+    font-size: 30px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section#banner {
+
+}
+
+section#create {
+    margin: 0 auto;
+    width: 40%;
+    min-width: 500px;
+    border-radius: 10px;
+    box-shadow: #aaa 0px 0px 10px;
+    overflow: hidden;
+}
+
+section#create input {
+    width: 100%;
+    height: 50px;
+    font-size: 24px;
+    font-family: "Quicksand";
+    color: black;
+    border: none;
+    background-color: #eee;
+    padding: 10px;
+    border-bottom: 1px rgba(0, 0, 0, 0.4);
+}
+
+section#create textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    background-color: #eee;
+    color: black;
+    border: none;
+    resize: none;
+}
+
+section#create button {
+    width: 100%;
+    height: 30px;
+    background-color: #633D8E;
+    color: #eee;
+    font-size: 24px;
+    font-family: "Quicksand";
+    font-weight: 400;
+    border: none;
+}
+
+section#timeline {
+    margin: 0 auto;
+    width: 40%;
+    min-width: 500px;
+}
+
+div.message {
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: #aaa 0px 0px 10px;
+    margin-top: 30px;
+}
+
+div.message div.title {
+    font-family: "Quicksand";
+    font-size: 24px;
+}
+
+div.message div.author {
+    text-indent: 1em;
+    color: #777;
+}
+
+div.message div.content {
+    margin-top: 10px;
+    text-indent: 1em;
 }
