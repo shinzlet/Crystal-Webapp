@@ -30,7 +30,7 @@ section#header {
     background: linear-gradient(30deg, rgb(230, 99, 81), rgb(230, 116, 81));
 
     box-shadow: #aaa 0px 0px 10px;
-    color: #fff;
+    color: white;
     font-size: 30px;
     
     padding: 10px 35%;
@@ -44,8 +44,9 @@ section#header div#title {
     float: left;
 }
 
-section#header div#title a {
-    text-
+section#header div#login a {
+    text-decoration: none;
+    color: white;
 }
 
 section#banner {

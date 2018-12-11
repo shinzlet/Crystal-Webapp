@@ -49,6 +49,12 @@ def serve(response : IO, path, posts)
     posts.to_json(builder)
     builder.end_document
     return
+  when "/auth"
+    response.content_type = "text/plain"
+    response.headers["WWW-Authenticate"] = "Basic realm=\"Login Required\""
+    response.print "i dunno man"
+    response.status_code = 401
+    return
   else
     path = "#{prefix}#{path}"
   end
